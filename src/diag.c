@@ -14,9 +14,10 @@ volatile uint16_t vcc_voltage = 0;
 volatile uint16_t init_vcc = 0xFFFF;
 volatile uint32_t uptime_seconds = 0;
 
-#define DIAG_STEP_VCC_READY 0
-#define DIAG_STEP_VCC_MEASURE 1
-#define DIAG_STEP_OVER 2
+#define DIAG_STEP_VCC_PREPARE 0
+#define DIAG_STEP_VCC_READY 1
+#define DIAG_STEP_VCC_MEASURE 2
+#define DIAG_STEP_OVER 5
 
 volatile uint8_t diag_step = DIAG_STEP_OVER-1;
 
@@ -36,11 +37,11 @@ void diag_init(void) {
 void diag_update(void) {
 	// called each 100 ms
 	switch (diag_step) {
+	case DIAG_STEP_VCC_PREPARE:
+		vcc_prepare_measure();
+		break;
 	case DIAG_STEP_VCC_READY:
 		adc_start();
-		break;
-	case DIAG_STEP_VCC_MEASURE:
-		vcc_prepare_measure();
 		break;
 	}
 
