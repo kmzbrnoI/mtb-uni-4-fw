@@ -29,7 +29,7 @@ uint8_t input_delay(uint8_t input);
 
 #define CONFIG_MODULE_TYPE 0x16
 #define CONFIG_FW_MAJOR 1
-#define CONFIG_FW_MINOR 5
+#define CONFIG_FW_MINOR 6
 #define CONFIG_PROTO_MAJOR 4
 #define CONFIG_PROTO_MINOR 1
 
