@@ -35,7 +35,7 @@ uint16_t crc16modbus_bytes(uint16_t crc, void const *mem, size_t len) {
     if (data == NULL)
         return 0xffff;
     for (size_t i = 0; i < len; i++) {
-        crc = (crc >> 8) ^ pgm_read_word_far((table_byte + ((crc ^ data[i]) & 0xff)));
+        crc = (crc >> 8) ^ pgm_read_word_far((uint_farptr_t)&table_byte[(crc ^ data[i]) & 0xff]);
     }
     return crc;
 }
