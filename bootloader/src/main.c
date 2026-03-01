@@ -167,8 +167,8 @@ bool fwcrc_ok(void) {
 	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
 		boot_rww_enable_safe();
 	}
-	uint8_t no_pages = pgm_read_byte_far(&fwattr.no_pages);
-	uint16_t crc_read = pgm_read_word_far(&fwattr.crc);
+	uint8_t no_pages = pgm_read_byte_far((uint_farptr_t)&fwattr.no_pages);
+	uint16_t crc_read = pgm_read_word_far((uint_farptr_t)&fwattr.crc);
 
 	if ((no_pages == 0xFF) || (no_pages == 0))
 		return false;
