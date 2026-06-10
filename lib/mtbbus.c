@@ -9,16 +9,16 @@
 
 volatile uint8_t mtbbus_output_buf[MTBBUS_OUTPUT_BUF_MAX_SIZE];
 volatile uint8_t mtbbus_output_buf_size = 0;
-volatile uint8_t mtbbus_next_byte_to_send = 0;
-volatile bool sending = false;
+static volatile uint8_t mtbbus_next_byte_to_send = 0;
+static volatile bool sending = false;
 
-volatile uint8_t mtbbus_input_buf[MTBBUS_INPUT_BUF_MAX_SIZE];
-volatile uint8_t mtbbus_input_buf_size = 0;
-volatile bool receiving = false;
-volatile uint16_t received_crc = 0;
-volatile uint8_t received_addr;
-volatile bool received = false;
-volatile bool sent = false;
+static volatile uint8_t mtbbus_input_buf[MTBBUS_INPUT_BUF_MAX_SIZE];
+static volatile uint8_t mtbbus_input_buf_size = 0;
+static volatile bool receiving = false;
+static volatile uint16_t received_crc = 0;
+static volatile uint8_t received_addr;
+static volatile bool received = false;
+static volatile bool sent = false;
 
 volatile uint8_t mtbbus_addr;
 volatile uint8_t mtbbus_speed;
