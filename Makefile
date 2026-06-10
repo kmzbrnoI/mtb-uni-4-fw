@@ -146,5 +146,4 @@ $(shell mkdir -p $(dir $(TARGET)) 2>/dev/null)
 
 -include $(shell mkdir .dep 2>/dev/null) $(wildcard .dep/*)
 
-.PHONY : all finish sizebefore sizeafter \
-build elf hex eep lss sym allhex clean program debug gdb-config fuses
+.PHONY : all sizebefore sizeafter build elf hex eep lss sym allhex clean program fuses

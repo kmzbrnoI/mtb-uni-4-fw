@@ -56,8 +56,6 @@ REMOVEDIR = rm -rf
 MSG_ERRORS_NONE = Errors: none
 MSG_SIZE_BEFORE = Size before:
 MSG_SIZE_AFTER = Size after:
-MSG_COFF = Converting to AVR COFF:
-MSG_EXTENDED_COFF = Converting to AVR Extended COFF:
 MSG_FLASH = Creating load file for Flash:
 MSG_EXTENDED_LISTING = Creating Extended Listing:
 MSG_SYMBOL_TABLE = Creating Symbol Table:
@@ -73,7 +71,7 @@ GENDEPFLAGS = -MMD -MP -MF .dep/$(@F).d
 
 ALL_CFLAGS = -mmcu=$(MCU) -Isrc $(CFLAGS) $(GENDEPFLAGS)
 
-all: gccversion sizebefore build sizeafter
+all: sizebefore build sizeafter
 
 build: elf hex lss sym
 
@@ -139,5 +137,4 @@ $(shell mkdir -p $(dir $(TARGET)) 2>/dev/null)
 
 -include $(shell mkdir .dep 2>/dev/null) $(wildcard .dep/*)
 
-.PHONY : all finish sizebefore sizeafter gccversion \
-build elf hex lss sym coff extcoff clean clean_list program debug gdb-config
+.PHONY : all sizebefore sizeafter build elf hex lss sym clean program
