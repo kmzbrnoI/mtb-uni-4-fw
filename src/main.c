@@ -15,8 +15,8 @@
 #include "config.h"
 #include "inputs.h"
 #include "diag.h"
-#include "../lib/mtbbus.h"
-#include "../lib/crc16modbus.h"
+#include "mtbbus.h"
+#include "crc16modbus.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

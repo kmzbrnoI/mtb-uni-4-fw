@@ -9,8 +9,8 @@
 #include <util/atomic.h>
 
 #include "io.h"
-#include "../lib/crc16modbus.h"
-#include "../lib/mtbbus.h"
+#include "crc16modbus.h"
+#include "mtbbus.h"
 
 /* All boot_* functions executing SPM instruction need to be called in
  * ATOMIC_BLOCK - interrupts need to be disabled during execution of the function,

@@ -1,7 +1,7 @@
 #include <avr/eeprom.h>
 #include <string.h>
 #include "config.h"
-#include "../lib/mtbbus.h"
+#include "mtbbus.h"
 
 uint8_t config_safe_state[NO_OUTPUTS];
 uint8_t config_inputs_delay[NO_INPUTS/2];

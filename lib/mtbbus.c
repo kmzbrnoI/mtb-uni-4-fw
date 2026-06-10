@@ -4,7 +4,7 @@
 #include <string.h>
 
 #include "mtbbus.h"
-#include "../src/io.h"
+#include "io.h"
 #include "crc16modbus.h"
 
 volatile uint8_t mtbbus_output_buf[MTBBUS_OUTPUT_BUF_MAX_SIZE];
