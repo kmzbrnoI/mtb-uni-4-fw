@@ -4,7 +4,7 @@
 #include "io.h"
 #include "common.h"
 
-void io_init() {
+void io_init(void) {
 	DDRD = 0xFF; // outputs 7-0
 	DDRC = 0xFF; // outputs 15-8
 	DDRB = (1 << PIN_LED_RED) | (1 << PIN_LED_GREEN) | (1 << PIN_TPMISO) | (1 << PIN_TPMOSI);
